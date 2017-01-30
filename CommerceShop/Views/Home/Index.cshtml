@@ -1,0 +1,18 @@
+﻿@model List<CommerceShop.Data.Domain.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RootLayout.cshtml";
+}
+@Html.Partial("_MainSlider")
+@Html.Partial("_HomePageProducts")
+@Html.Partial("_MessageBar")
+@Html.Partial("_FeturedProducts")
+@Html.Partial("_NewLetterBox")
+@Html.Partial("_Footer")
+
+@foreach (var item in Model)
+{
+    <ul>
+        @item.Name
+    </ul>
+}

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/Commerce.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery-3.1.1.slim.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="main-wrapper">
+        @Html.Partial("_Header")
+
+        @RenderBody()
+    </div>
+</body>
+</html>
