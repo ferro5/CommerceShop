@@ -137,6 +137,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +169,10 @@
     <ProjectReference Include="..\CommerceShop.Data\CommerceShop.Data.csproj">
       <Project>{65512712-1c15-4cd2-bbac-c8fb2542f04e}</Project>
       <Name>CommerceShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommerceShop.Service\CommerceShop.Service.csproj">
+      <Project>{9340c419-0582-41a4-8e27-197eeb0e673c}</Project>
+      <Name>CommerceShop.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

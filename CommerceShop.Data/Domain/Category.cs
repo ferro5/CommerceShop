@@ -7,6 +7,7 @@ namespace CommerceShop.Data.Domain
     public class Category : BaseEntity, IAuditEntity
     {
         public string Name { get; set; }
+        public int ParentId { get; set; }
         public int PictureId { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
