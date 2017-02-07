@@ -1,18 +1,21 @@
-﻿using System.Collections.Generic;
-using CommerceShop.Data.Domain;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace CommerceShop.Data
 {
-    public interface IRepository<TEntity> where TEntity : BaseEntity
+    public interface IRepository<TEntity>
     {
         IList<TEntity> GetAll();
 
-        TEntity GetById(int id);
+        IList<TEntity> Where(Expression<Func<TEntity, bool>> predicate);
 
-        TEntity InsertCategory(TEntity entity);
+        TEntity Insert(TEntity entity);
 
         void Update(TEntity entity);
 
-        bool Delete(TEntity entity);
+        void Delete(TEntity entity);
+
+        int SaveChanges();
     }
 }

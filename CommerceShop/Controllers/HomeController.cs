@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
-using CommerceShop.Data;
 using CommerceShop.Data.Domain;
-using CommerceShop.Service.Repository;
+using CommerceShop.Service.Products;
 
 namespace CommerceShop.Controllers
 {
@@ -14,19 +12,33 @@ namespace CommerceShop.Controllers
         public ActionResult Index()
         {
             var model = new List<Category>();
-            ServiceCategory serviceCategory = new ServiceCategory();
-            serviceCategory.InsertCategory(new Category
+            //ServiceCategory serviceCategory = new ServiceCategory();
+            //serviceCategory.Insert(new Category
+            //{
+            //    Name = "Chimino",
+            //    ParentId = 0,
+            //    ShortDescription = null,
+            //    LongDescription = null,
+            //    PictureId = 0,
+            //    CreatedDate = DateTime.Now,
+            //    CreatedUserId = 0,
+            //    UpdateDate = DateTime.Now,
+            //    UpdateUserId = 0
+            //});
+            ProductService _productService = new ProductService();
+            _productService.Insert(new Product
             {
-                Name = "Chimino",
-                ParentId = 0,
-                ShortDescription = null,
-                LongDescription = null,
-                PictureId = 0,
+                Name = "Amfora",
+                ShortDescription = "Suit",
+                LongDescription = "Itallian Suit",
+                CostPrice = 1500,
+                Price = 5000,
                 CreatedDate = DateTime.Now,
-                CreatedUserId = 0,
+                CreatedUserId = 1,
                 UpdateDate = DateTime.Now,
-                UpdateUserId = 0
             });
+
+            _productService.SaveChanges();
 
             return View(model);
         }
