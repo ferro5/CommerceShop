@@ -4,15 +4,15 @@
     Layout = "~/Views/Shared/_RootLayout.cshtml";
 }
 @Html.Partial("_MainSlider")
-@Html.Partial("_HomePageProducts")
-@Html.Partial("_MessageBar")
-@Html.Partial("_FeturedProducts")
-@Html.Partial("_NewLetterBox")
-@Html.Partial("_Footer")
+@Html.Action("HomePageProducts", "Product")
+    @Html.Partial("_MessageBar")
+    @Html.Partial("_FeturedProducts")
+    @Html.Partial("_NewLetterBox")
+    @Html.Partial("_Footer")
 
-@foreach (var item in Model)
-{
-    <ul>
-        @item.Name
-    </ul>
-}
+    @foreach (var item in Model)
+    {
+        <ul>
+            @item.Name
+        </ul>
+    }

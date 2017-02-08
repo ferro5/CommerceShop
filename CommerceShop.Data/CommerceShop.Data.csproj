@@ -53,6 +53,7 @@
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\ProductCategoryMapping.cs" />
     <Compile Include="GenericRepository.cs" />
+    <Compile Include="GenericUnitOfWork.cs" />
     <Compile Include="IAuditEntity.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

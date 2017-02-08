@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Linq.Expressions;
 using CommerceShop.Data.Domain;
 
 namespace CommerceShop.Data
 {
-    public abstract class GenericRepository<CContext, TEntity>
-        : IRepository<TEntity> where CContext : DbContext, new() where TEntity : BaseEntity
+    public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
 
     {
-        private CContext _context = new CContext();
+        private CommerceContext _context;
 
-        public CContext Context
+        public GenericRepository(CommerceContext context)
+        {
+            _context = context;
+        }
+
+        public CommerceContext Context
         {
             get { return _context; }
             set { _context = value; }
@@ -46,9 +51,9 @@ namespace CommerceShop.Data
             _context.Set<TEntity>().Remove(entity);
         }
 
-        public virtual int SaveChanges()
-        {
-            return _context.SaveChanges();
-        }
+        //public virtual int SaveChanges()
+        //{
+        //    return _context.SaveChanges();
+        //}
     }
 }

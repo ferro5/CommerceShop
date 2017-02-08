@@ -16,6 +16,6 @@ namespace CommerceShop.Data
 
         void Delete(TEntity entity);
 
-        int SaveChanges();
+        //int SaveChanges();
     }
 }

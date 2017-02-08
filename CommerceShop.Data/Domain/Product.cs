@@ -19,6 +19,7 @@ namespace CommerceShop.Data.Domain
         public string LongDescription { get; set; }
         public decimal Price { get; set; }
         public decimal CostPrice { get; set; }
+        public bool ShowOnHomePage { get; set; }
 
         //
         public int CreatedUserId { get; set; }
